@@ -1,0 +1,26 @@
+name: Test Action Locally
+
+on: push
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: With ignore file
+        uses: ./
+        with:
+          ignore-file: .wsignore
+
+      - name: No ignore file
+        uses: ./
+
+      - name: Non-existent ignore file
+        uses: ./
+        with:
+          ignore-file: .absolutelydoesntexistinhere

@@ -1,0 +1,23 @@
+{
+  "name": "check-whitespace-action",
+  "version": "0.1.0",
+  "description": "GitHub Action that checks whitespace usage in the project, and fails if any non-compliant characters are found. The check includes any trailing whitespace, and tab indentation used instead of spaces.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "sim": "npm run build && act",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src",
+    "build": "ncc build src/index.js -o dist"
+  },
+  "keywords": [],
+  "author": "Lynxtickler",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.4",
+    "eslint": "^9.39.2"
+  }
+}
